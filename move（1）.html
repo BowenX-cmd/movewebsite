@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECARBONISING THE AUSTRALIAN ROAD TRANSPORT INDUSTRY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#00C48C',
+                        dark: '#1D2939',
+                        light: '#F9FAFB',
+                        muted: '#667085'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .bg-gradient-blue {
+                background: linear-gradient(135deg, #165DFF 0%, #0E42D2 100%);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .data-table {
+                @apply w-full min-w-[320px] border-collapse;
+            }
+            .data-table th, .data-table td {
+                @apply py-3 px-4 border border-gray-200 text-left;
+            }
+            .data-table th {
+                @apply bg-gray-50 font-semibold text-dark;
+            }
+            .data-table tr:nth-child(even) {
+                @apply bg-gray-50;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter text-dark bg-light antialiased">
+    <!-- Header Navigation -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="flex items-center space-x-2">
+                    <img src="https://github.com/BowenX-cmd/MOVE/blob/main/New%20folder/thumbnail_image001.jpg?raw=true" alt="MOVE Logo" class="h-10 w-auto rounded-md">
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-white hover:text-secondary transition-colors font-medium">About</a>
+                    <a href="#technology" class="text-white hover:text-secondary transition-colors font-medium">Technology</a>
+                    <a href="#applications" class="text-white hover:text-secondary transition-colors font-medium">Applications</a>
+                    <a href="#results" class="text-white hover:text-secondary transition-colors font-medium">Results</a>
+                    <a href="#contact" class="text-white hover:text-secondary transition-colors font-medium">Contact</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg rounded-b-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#about" class="block text-dark hover:text-primary transition-colors font-medium py-2">About</a>
+                <a href="#technology" class="block text-dark hover:text-primary transition-colors font-medium py-2">Technology</a>
+                <a href="#applications" class="block text-dark hover:text-primary transition-colors font-medium py-2">Applications</a>
+                <a href="#results" class="block text-dark hover:text-primary transition-colors font-medium py-2">Results</a>
+                <a href="#contact" class="block text-dark hover:text-primary transition-colors font-medium py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-gradient-blue flex items-center overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-[url('https://github.com/BowenX-cmd/MOVE/blob/main/MOVE%20BERT%20white%20scania.png?raw=true')] bg-cover bg-center"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-extrabold text-white leading-tight mb-6 text-shadow">
+                    DECARBONISING THE<br>AUSTRALIAN ROAD<br>TRANSPORT INDUSTRY
+                </h1>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#technology" class="bg-secondary hover:bg-secondary/90 text-white font-semibold py-3 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg">
+                        Explore Technology <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-lg transition-all backdrop-blur-sm">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-light to-transparent"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">About MOVE EV</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-muted max-w-3xl mx-auto text-lg">
+                    A pioneer of electric vehicle (EV) solutions for heavy transport decarbonisation
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <div class="bg-white p-6 rounded-xl shadow-md mb-8">
+                        <h3 class="text-xl font-bold text-dark mb-4 flex items-center">
+                            <i class="fa fa-building text-primary mr-3"></i> Company Overview
+                        </h3>
+                        <ul class="space-y-3 text-muted">
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-secondary mt-1 mr-3"></i>
+                                <span>Founded in 2020 with $4m+ investment in R&D</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-secondary mt-1 mr-3"></i>
+                                <span>Patent pending load measuring Kinetic Kingpin coupling system with integrated battery powered trailer eAxle</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-secondary mt-1 mr-3"></i>
+                                <span>Ready for technical proof of concept trials with mining haulage partnerships</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check text-secondary mt-1 mr-3"></i>
+                                <span>Aim to accelerate decarbonisation of heavy haulage freight</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold text-dark mb-4 flex items-center">
+                            <i class="fa fa-users text-primary mr-3"></i> Expert Team
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-user text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Jamie Lodge</h4>
+                                    <p class="text-sm text-muted">Founder • 20+ years transport industry experience, owner of Kindred Equipment Sales and Hire</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-user text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Martin Toomey</h4>
+                                    <p class="text-sm text-muted">Chairman elect • 30+ years global executive experience, Managing Director Knorr Bremse China</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-user text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Chelsea Lodge</h4>
+                                    <p class="text-sm text-muted">Director and Majority Shareholder</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-user text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">James Mackie</h4>
+                                    <p class="text-sm text-muted">Director elecrt • 30+ years global experience in Heavy Truck and Light Automotive industries </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-user text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Ramon Gregory</h4>
+                                    <p class="text-sm text-muted">CTO • 30+ years electrical industry experience, 20+ years in renewable energy design</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-user text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Tony Wardle</h4>
+                                    <p class="text-sm text-muted">CAD/CAM Designer • 25+ years machining experience, 19 years at Orbital Engine R&D</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start p-3 hover:bg-gray-50 rounded-lg transition-colors">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fa fa-user text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark">Brendon Mellor</h4>
+                                    <p class="text-sm text-muted">Chassis Construction Lead • 20+ years trailer design, 7 years workshop management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl mb-6">
+                        <img src="https://github.com/BowenX-cmd/MOVE/blob/main/MOVE%20BERT%20white%20scania.png?raw=true" alt="MOVE Electric Trailer" class="w-full h-auto">
+                    </div>
+
+                    <!-- 优化后的视频播放器 -->
+                    <div class="rounded-2xl overflow-hidden shadow-2xl mb-6">
+                        <div class="video-container">
+                            <video
+                                id="move-video"
+                                controls
+                                playsinline
+                                preload="metadata"
+                                poster="https://github.com/BowenX-cmd/MOVE/blob/main/New%20folder/thumbnail_image001.jpg?raw=true"
+                                width="100%"
+                                height="auto"
+                                disablePictureInPicture
+                                disableRemotePlayback
+                            >
+                                <source src="https://raw.githubusercontent.com/BowenX-cmd/MOVE/main/New%20folder/Kingpin%20(1).mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="mt-3 text-center text-sm text-muted">
+                            <p>Click the play button to watch the video</p>
+                            <p class="text-xs">(Mobile devices may need to manually click to play)</p>
+                        </div>
+                    </div>
+
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg max-w-xs hidden md:block">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-secondary/20 p-3 rounded-full">
+                                <i class="fa fa-bolt text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark text-sm">1,440kW Total Power</h4>
+                                <p class="text-xs text-muted">4 eAxles at 360kW peak each</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Technology Section -->
+    <section id="technology" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">Innovative Technology</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-muted max-w-3xl mx-auto text-lg">
+                    Electric drive system for semi trailers with intelligent load management
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-dark mb-6">MOVE System Architecture</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <h4 class="text-xl font-bold text-dark mb-3 flex items-center">
+                                <i class="fa fa-car text-primary mr-3"></i> eAxle Technology
+                            </h4>
+                            <ul class="space-y-3 text-muted">
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>360kW peak power per axle, 160kW continuous</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>13-16 tonne mass rating, water-cooled</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>IP67 ingress protection, electronic differential</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>Hub reduction drive, disc brakes, dual motors</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <h4 class="text-xl font-bold text-dark mb-3 flex items-center">
+                                <i class="fa fa-battery-full text-primary mr-3"></i> Battery System
+                            </h4>
+                            <ul class="space-y-3 text-muted">
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>352kWh per battery pack, swappable design</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>1.5 million kWh cycle life over 6 years</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>656VDC nominal voltage, 4C discharge rate</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>Liquid thermal management, 200km range</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <h4 class="text-xl font-bold text-dark mb-3 flex items-center">
+                                <i class="fa fa-link text-primary mr-3"></i> Kinetic Kingpin
+                            </h4>
+                            <ul class="space-y-3 text-muted">
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>450kN load sensing capability</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>Measures longitudinal loads to adjust eAxle power</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>Neutralises kingpin load via intelligent feedback</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>Wireless communication with tractor unit</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-xl shadow-md">
+                            <h4 class="text-xl font-bold text-dark mb-3 flex items-center">
+                                <i class="fa fa-microchip text-primary mr-3"></i> Control System
+                            </h4>
+                            <ul class="space-y-3 text-muted">
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>Proprietary software for intelligent power distribution</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>Load-based torque vectoring across multiple axles</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>Regenerative braking optimisation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-dot-circle-o text-secondary mt-1 mr-3"></i>
+                                    <span>Real-time data logging and telematics</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-white p-6 rounded-xl shadow-md h-full">
+                        <h4 class="text-xl font-bold text-dark mb-4">System Specifications</h4>
+                        <div class="overflow-x-auto">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Specification</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Power System</td>
+                                        <td>Electrically driven e-Axles</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Axle Configuration</td>
+                                        <td>Tri-axle group (or bogie/quad)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Peak Power per Axle</td>
+                                        <td>360kW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Continuous Power per Axle</td>
+                                        <td>160kW</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total System Power (4 Axles)</td>
+                                        <td>1,440kW peak</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Battery Capacity</td>
+                                        <td>352-528kWh per battery</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Control System</td>
+                                        <td>Proprietary with Kinetic Kingpin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kingpin Load Sensing</td>
+                                        <td>450kN capacity</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="text-xl font-bold text-dark mb-4">How It Works</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                        <span class="font-bold text-primary">1</span>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-dark">Kingpin Load Sensing</h5>
+                                        <p class="text-sm text-muted">Kinetic Kingpin measures longitudinal forces and weight distribution to optimise power delivery</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                        <span class="font-bold text-primary">2</span>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-dark">Intelligent Power Distribution</h5>
+                                        <p class="text-sm text-muted">Control system calculates required torque based on road conditions, gradient, and vehicle speed</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                        <span class="font-bold text-primary">3</span>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-dark">eAxle Drive System</h5>
+                                        <p class="text-sm text-muted">Electric motors in trailer axles provide additional propulsion, reducing load on tractor engine</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                        <span class="font-bold text-primary">4</span>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-dark">Regenerative Braking</h5>
+                                        <p class="text-sm text-muted">Kinetic energy during braking is converted back to electricity and stored in batteries</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                        <span class="font-bold text-primary">5</span>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-dark">Battery Management</h5>
+                                        <p class="text-sm text-muted">Swappable battery packs ensure minimal downtime and extend operational range</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-bolt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Zero Emissions</h3>
+                    <p class="text-muted">Electric drive system eliminates tailpipe emissions, contributing to cleaner air and reduced carbon footprint</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-cogs text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Improved Efficiency</h3>
+                    <p class="text-muted">Distributed electric propulsion reduces load on tractor engine, improving fuel efficiency by up to 30%</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-tachometer text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Enhanced Performance</h3>
+                    <p class="text-muted">Additional electric power improves acceleration, hill climbing ability, and overall vehicle performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="py-20 bg-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">Target Applications</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-muted max-w-3xl mx-auto text-lg">
+                    Versatile electric trailer system designed for multiple heavy transport sectors
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <!-- 移除了图片 -->
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Mining Haulage</h3>
+                        <ul class="space-y-2 text-muted">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>High torque for steep gradients</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Reduced diesel consumption in closed environments</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Regenerative braking on downhill sections</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Lower maintenance costs</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <!-- 移除了图片 -->
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Long Haul Transport</h3>
+                        <ul class="space-y-2 text-muted">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>30% reduction in fuel consumption</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Extended range with battery swaps</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Reduced engine wear and tear</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Compliance with emissions regulations</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gray-100 flex items-center justify-center">
+                        <!-- 移除了图片 -->
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">Urban Delivery</h3>
+                        <ul class="space-y-2 text-muted">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Zero emissions in city centers</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Quiet operation for night deliveries</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Regenerative braking for stop-start traffic</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-3"></i>
+                                <span>Lower operating costs</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-white p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold text-dark mb-6 text-center">Key Benefits</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                            <i class="fa fa-leaf text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-2">Environmental Sustainability</h4>
+                        <p class="text-sm text-muted">Significant reduction in CO2 emissions and air pollutants</p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                            <i class="fa fa-money text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-2">Cost Savings</h4>
+                        <p class="text-sm text-muted">30% reduction in fuel costs and lower maintenance expenses</p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                            <i class="fa fa-road text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-2">Infrastructure Agnostic</h4>
+                        <p class="text-sm text-muted">No need for new charging infrastructure, uses existing vehicles</p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                            <i class="fa fa-trophy text-primary text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-dark mb-2">Performance Enhancement</h4>
+                        <p class="text-sm text-muted">Improved acceleration, hill climbing, and overall vehicle dynamics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">Expected Results</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-muted max-w-3xl mx-auto text-lg">
+                    Quantifiable benefits based on engineering simulations and industry data
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-dark mb-6">Performance Metrics</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-dark mb-2">Fuel Consumption Reduction</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-secondary h-4 rounded-full" style="width: 30%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1 text-sm text-muted">
+                                <span>Baseline</span>
+                                <span>30% Reduction</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-dark mb-2">CO2 Emissions Reduction</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-secondary h-4 rounded-full" style="width: 28%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1 text-sm text-muted">
+                                <span>Baseline</span>
+                                <span>28% Reduction</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-dark mb-2">Maintenance Cost Reduction</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-secondary h-4 rounded-full" style="width: 25%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1 text-sm text-muted">
+                                <span>Baseline</span>
+                                <span>25% Reduction</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-bold text-dark mb-2">Tractor Engine Lifespan Extension</h4>
+                            <div class="w-full bg-gray-200 rounded-full h-4">
+                                <div class="bg-secondary h-4 rounded-full" style="width: 40%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1 text-sm text-muted">
+                                <span>Baseline</span>
+                                <span>40% Increase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-dark mb-6">Economic Analysis</h3>
+                    <div class="overflow-x-auto">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Annual Fuel Savings per Truck</td>
+                                    <td>$45,000 - $60,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Maintenance Cost Reduction</td>
+                                    <td>25% per annum</td>
+                                </tr>
+                                <tr>
+                                    <td>CO2 Emissions Reduction</td>
+                                    <td>120-160 tonnes per annum</td>
+                                </tr>
+                                <tr>
+                                    <td>ROI Timeline</td>
+                                    <td>2.5 - 3.5 years</td>
+                                </tr>
+                                <tr>
+                                    <td>Vehicle Resale Value</td>
+                                    <td>15% premium for electrified units</td>
+                                </tr>
+                                <tr>
+                                    <td>Carbon Credit Revenue</td>
+                                    <td>$8,000 - $12,000 per annum</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-md">
+                <h3 class="text-2xl font-bold text-dark mb-8 text-center">Performance Comparison</h3>
+                <div class="h-80">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mb-6"></div>
+                <p class="text-muted max-w-3xl mx-auto text-lg">
+                    Interested in our electric trailer technology? Contact us for more information.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold text-dark mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-map-marker text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">Location</h4>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">Email</h4>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fa fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark">Phone</h4>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h4 class="font-bold text-dark mb-4">Connect With Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 删除了Send Us a Message表单 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="https://github.com/BowenX-cmd/MOVE/blob/main/New%20folder/thumbnail_image001.jpg?raw=true" alt="MOVE Logo" class="h-10 w-auto rounded-md">
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Pioneering electric vehicle solutions for heavy transport decarbonisation.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#technology" class="text-gray-400 hover:text-white transition-colors">Technology</a></li>
+                        <li><a href="#applications" class="text-gray-400 hover:text-white transition-colors">Applications</a></li>
+                        <li><a href="#results" class="text-gray-400 hover:text-white transition-colors">Results</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400"></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400"></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-phone text-secondary mt-1 mr-3"></i>
+                            <span class="text-gray-400"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2025 MOVE EV. All rights reserved.
+                </p>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transform transition-all duration-300 opacity-0 translate-y-10">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-dark/95', 'shadow-lg', 'backdrop-blur-sm');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-dark/95', 'shadow-lg', 'backdrop-blur-sm');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'translate-y-10');
+                backToTopButton.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'translate-y-10');
+                backToTopButton.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Performance chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+
+        const performanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Fuel Consumption', 'CO2 Emissions', 'Maintenance Cost', 'Engine Lifespan'],
+                datasets: [
+                    {
+                        label: 'Traditional Diesel',
+                        data: [100, 100, 100, 100],
+                        backgroundColor: '#165DFF',
+                        borderColor: '#165DFF',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'MOVE Electric Trailer',
+                        data: [70, 72, 75, 140],
+                        backgroundColor: '#00C48C',
+                        borderColor: '#00C48C',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Relative Performance (%)'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Performance Comparison: Traditional vs MOVE Electric Trailer'
+                    }
+                }
+            }
+        });
+
+        // Initialize navbar state
+        if (window.scrollY > 50) {
+            navbar.classList.add('bg-dark/95', 'shadow-lg', 'backdrop-blur-sm');
+        }
+    </script>
+</body>
+</html>
